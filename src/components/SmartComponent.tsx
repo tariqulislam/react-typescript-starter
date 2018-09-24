@@ -1,5 +1,6 @@
 import * as React from 'react';
-
+import DumpComponent from './DumpComponent'
+import DumpSFCComponent from './DumpSFCComponent'
 export interface Props {
   name: string,
   address: string
@@ -15,8 +16,8 @@ class SmartComponent extends React.Component<Props, State> {
   constructor(props: Props) {
     super(props)
     this.state = {
-      showName: false,
       showAddress: false,
+      showName: false,
       userName: ''
     }
   }
@@ -27,13 +28,16 @@ class SmartComponent extends React.Component<Props, State> {
 
   public render() {
     return (
-
       <div>
-      <h1>This is Typescript Smart Component </h1>
-      <button onClick={() => this.onShowName} >Click</button>
-      {
-        this.state.showName && <div>{this.state.userName}</div>
-      }
+        <h1>This is Typescript Smart Component </h1>
+        <button onClick={() => this.onShowName("tariqulislamronnie")} >Click</button>
+        {
+          this.state.showName && <div>{this.state.userName}</div>
+        }
+        <p> Dump Component </p>
+        <DumpComponent addressInfo={"this is sample address"} />
+        <p> Dump SFC Component </p>
+        <DumpSFCComponent emailInfo={"tariqul.islam.rony@gmail.com"} />
       </div>
     )
   }
