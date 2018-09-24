@@ -1,5 +1,7 @@
 import * as React from 'react';
+// Import Dump Component from DumpComponent.tsx file
 import DumpComponent from './DumpComponent'
+// Import Dump SFC Component from DumpSFCComponent.tsx file
 import DumpSFCComponent from './DumpSFCComponent'
 export interface Props {
   name: string,
@@ -35,8 +37,10 @@ class SmartComponent extends React.Component<Props, State> {
           this.state.showName && <div>{this.state.userName}</div>
         }
         <p> Dump Component </p>
+        {/* Add the Dump Component with Properties */}
         <DumpComponent addressInfo={"this is sample address"} />
         <p> Dump SFC Component </p>
+          {/* Add the Dump SFC Component with Properties */}
         <DumpSFCComponent emailInfo={"tariqul.islam.rony@gmail.com"} />
       </div>
     )
